@@ -1,0 +1,540 @@
+/* BabaProds Admin Styles */
+:root {
+  --bp-bg: #f9fafb;
+  --bp-surface: #ffffff;
+  --bp-primary: #2563eb;
+  --bp-secondary: #14b8a6;
+  --bp-highlight: #f59e0b;
+  --bp-text-primary: #111827;
+  --bp-text-secondary: #4b5563;
+  --bp-border: #e5e7eb;
+}
+
+.babaprods-wrap {
+  background: var(--bp-bg);
+  margin: 0 -20px;
+  padding: 20px;
+  min-height: calc(100vh - 32px);
+}
+
+.babaprods-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.babaprods-card {
+  background: var(--bp-surface);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  border: 1px solid var(--bp-border);
+}
+
+.babaprods-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--bp-border);
+}
+
+.babaprods-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--bp-text-secondary);
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.babaprods-tab-btn:hover {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--bp-primary);
+}
+
+.babaprods-tab-btn.active {
+  color: var(--bp-primary);
+  background: var(--bp-surface);
+}
+
+.babaprods-tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--bp-primary);
+}
+
+.babaprods-tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.babaprods-tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.babaprods-form-group {
+  margin-bottom: 20px;
+}
+
+.babaprods-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--bp-text-primary);
+}
+
+.babaprods-input,
+.babaprods-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--bp-border);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: var(--bp-surface);
+  color: var(--bp-text-primary);
+}
+
+.babaprods-input:focus,
+.babaprods-textarea:focus {
+  outline: none;
+  border-color: var(--bp-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.babaprods-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.babaprods-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.babaprods-btn:hover::before {
+  left: 100%;
+}
+
+.babaprods-btn-primary {
+  background: var(--bp-primary);
+  color: white;
+}
+
+.babaprods-btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.babaprods-btn-secondary {
+  background: var(--bp-secondary);
+  color: white;
+}
+
+.babaprods-btn-secondary:hover {
+  background: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+}
+
+.babaprods-btn-highlight {
+  background: var(--bp-highlight);
+  color: white;
+}
+
+.babaprods-btn-highlight:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.babaprods-search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.babaprods-product-card {
+  background: var(--bp-surface);
+  border: 1px solid var(--bp-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.babaprods-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--bp-primary);
+}
+
+.babaprods-product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--bp-bg);
+}
+
+.babaprods-product-info {
+  padding: 16px;
+}
+
+/* Added product title styling for better display in search results */
+.babaprods-product-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bp-text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.8em;
+}
+
+.babaprods-product-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bp-primary);
+  margin-bottom: 8px;
+}
+
+.babaprods-product-id {
+  font-size: 12px;
+  color: var(--bp-text-secondary);
+  margin-bottom: 12px;
+}
+
+.babaprods-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.babaprods-modal-content {
+  background-color: var(--bp-surface);
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.babaprods-close {
+  color: var(--bp-text-secondary);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.babaprods-close:hover {
+  color: var(--bp-text-primary);
+}
+
+.babaprods-product-details {
+  padding: 24px;
+}
+
+.babaprods-product-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Enhanced image preview styling for better display */
+.babaprods-image-preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--bp-border);
+  background: var(--bp-bg);
+  transition: transform 0.3s ease;
+}
+
+.babaprods-image-preview:hover {
+  transform: scale(1.05);
+}
+
+.babaprods-image-preview img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.babaprods-product-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--bp-border);
+  transition: transform 0.3s ease;
+}
+
+.babaprods-product-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.babaprods-product-form {
+  display: grid;
+  gap: 16px;
+}
+
+.babaprods-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Enhanced category container styling with better button layout */
+.babaprods-category-container {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.babaprods-category-container .babaprods-input {
+  flex: 1;
+}
+
+.babaprods-category-container .babaprods-btn {
+  white-space: nowrap;
+  padding: 12px 16px;
+  font-size: 12px;
+}
+
+/* Added description container styling for regenerate functionality */
+.babaprods-description-container {
+  position: relative;
+}
+
+.babaprods-description-container .babaprods-textarea {
+  margin-bottom: 8px;
+}
+
+.babaprods-description-container .babaprods-btn {
+  margin-right: 8px;
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+.babaprods-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 20px;
+}
+
+.babaprods-pagination button {
+  padding: 8px 12px;
+  border: 1px solid var(--bp-border);
+  background: var(--bp-surface);
+  color: var(--bp-text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.babaprods-pagination button:hover {
+  background: var(--bp-primary);
+  color: white;
+  border-color: var(--bp-primary);
+}
+
+.babaprods-pagination button.active {
+  background: var(--bp-primary);
+  color: white;
+  border-color: var(--bp-primary);
+}
+
+.babaprods-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.babaprods-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.babaprods-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--bp-text-secondary);
+}
+
+.babaprods-loading-container .babaprods-loading {
+  border: 3px solid var(--bp-border);
+  border-top-color: var(--bp-primary);
+  margin-right: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.babaprods-credentials-status {
+  margin-top: 24px;
+  padding: 20px;
+  background: rgba(20, 184, 166, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid var(--bp-secondary);
+}
+
+.babaprods-credentials-status h3 {
+  margin-top: 0;
+  color: var(--bp-text-primary);
+}
+
+.babaprods-credentials-status p {
+  margin: 8px 0;
+  color: var(--bp-text-secondary);
+}
+
+.babaprods-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.babaprods-alert-success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #166534;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.babaprods-alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .babaprods-wrap {
+    margin: 0 -10px;
+    padding: 10px;
+  }
+
+  .babaprods-card {
+    padding: 16px;
+  }
+
+  .babaprods-search-results {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+
+  .babaprods-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .babaprods-modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+
+  .babaprods-tabs {
+    flex-direction: column;
+  }
+
+  .babaprods-tab-btn {
+    border-radius: 8px;
+    margin-bottom: 4px;
+  }
+
+  /* Enhanced mobile responsive styling for category and description containers */
+  .babaprods-category-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .babaprods-category-container .babaprods-btn {
+    margin-top: 8px;
+  }
+
+  .babaprods-description-container .babaprods-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,64 @@
+/* BabaProds Frontend Styles */
+:root {
+  --bp-bg: #f9fafb;
+  --bp-surface: #ffffff;
+  --bp-primary: #2563eb;
+  --bp-secondary: #14b8a6;
+  --bp-highlight: #f59e0b;
+  --bp-text-primary: #111827;
+  --bp-text-secondary: #4b5563;
+  --bp-border: #e5e7eb;
+}
+
+.babaprods-frontend {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--bp-text-primary);
+}
+
+.babaprods-product-widget {
+  background: var(--bp-surface);
+  border: 1px solid var(--bp-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.babaprods-product-widget h3 {
+  margin-top: 0;
+  color: var(--bp-text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.babaprods-product-meta {
+  display: flex;
+  gap: 16px;
+  margin: 12px 0;
+  font-size: 14px;
+  color: var(--bp-text-secondary);
+}
+
+.babaprods-product-price {
+  color: var(--bp-primary);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.babaprods-buy-btn {
+  background: var(--bp-highlight);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.babaprods-buy-btn:hover {
+  background: #d97706;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
